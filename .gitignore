@@ -20,3 +20,4 @@ Project1/.vscode/c_cpp_properties.json
 .vscode/tasks.json
 src/main.exe
 .vscode/*
+*.exe
