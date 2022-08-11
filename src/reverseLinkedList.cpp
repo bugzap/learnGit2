@@ -36,7 +36,7 @@ utils::LinkedList* reverseLinkedList(utils::LinkedList* aList)
     result->print();
     return result;
 }
-
+#if 0
 int main()
 {
     using namespace utils;
@@ -52,3 +52,4 @@ int main()
 
     return 0;
 }
+#endif

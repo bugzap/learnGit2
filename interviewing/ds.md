@@ -8,6 +8,12 @@ tree
 heap
 trie
 graph
+    * BFS
+    * DFS
+    * ADjacency matrix
+    * Adjacency list
+    * minimum spanning tree
+      
 
 
 Algo

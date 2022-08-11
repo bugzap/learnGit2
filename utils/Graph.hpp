@@ -1,5 +1,5 @@
 #pragma once
-#include <vector>
+#include <list>
 #include <iostream>
 #include <unordered_set>
 #include <map>
@@ -10,8 +10,10 @@ namespace utils
 
     class Graph
     {
+        public:
+        using AdjacencyList = std::list<int>;
         private:
-        std::map<int, std::vector<int>> fGraph;
+        std::map<int, AdjacencyList> fGraph;
         std::unordered_set<int> fVisited;
     public:
         int u;
@@ -28,7 +30,7 @@ namespace utils
             fVisited.clear();
         }
         
-        const std::vector<int>& getNeighbours(int u) const{
+        const AdjacencyList& getNeighbours(int u) const{
             auto found = fGraph.find(u);;
             return found->second;
         }

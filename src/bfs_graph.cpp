@@ -38,29 +38,35 @@ void dfs(utils::Graph *g)
     dfsHelper(g, g->u);
 }
 
+void doTraversals(utils::Graph* g){
+        std::cout << "BFS" << std::endl;
+        bfs(g);
+        g->clearVisited();
+        std::cout << "DFS" << std::endl;
+        dfs(g);
+        g->clearVisited();
+}
+
 int main()
 {
-    /*
-    utils::Graph g(0);
-    g.addEdge(0, 1);
-    g.addEdge(0, 2);
-    g.addEdge(0, 3);
-    g.addEdge(1, 4);
-    g.addEdge(1, 5);
-    g.addEdge(2, 5);
-    g.addEdge(3, 6);
-    */
-   utils::Graph g(2);
-    g.addEdge(0, 1);
-    g.addEdge(0, 2);
-    g.addEdge(1, 2);
-    g.addEdge(2, 0);
-    g.addEdge(2, 3);
-    g.addEdge(3, 3);
+    
+    utils::Graph g1(0);
+    g1.addEdge(0, 1);
+    g1.addEdge(0, 2);
+    g1.addEdge(0, 3);
+    g1.addEdge(1, 4);
+    g1.addEdge(1, 5);
+    g1.addEdge(2, 5);
+    g1.addEdge(3, 6);
+    
+   utils::Graph g2(2);
+    g2.addEdge(0, 1);
+    g2.addEdge(0, 2);
+    g2.addEdge(1, 2);
+    g2.addEdge(2, 0);
+    g2.addEdge(2, 3);
+    g2.addEdge(3, 3);
 
-    std::cout << "BFS" << std::endl;
-    bfs(&g);
-    g.clearVisited();
-    std::cout << "DFS" << std::endl;
-    dfs(&g);
+    doTraversals(&g1);
+    doTraversals(&g2);
 }

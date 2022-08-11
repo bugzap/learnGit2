@@ -1,5 +1,6 @@
 #pragma once
 
+#include <vector>
 #include <iostream>
 #include <unordered_set>
 
@@ -30,9 +31,22 @@ namespace utils{
 };
     struct LinkedListPool{
 
+        LinkedList* getLinkedList(const std::vector<int>& nums)
+        {
+            LinkedList* list = getNode(-1);
+            LinkedList* result= list;
+            for (int n : nums){
+                LinkedList* newNode = getNode(n);
+                list->next = newNode;
+                list = newNode;
+            }
+            return result->next;
+        }
+
         LinkedList* getNode(int val){
             LinkedList* thisNode = new LinkedList(val);
             fNodes.insert(thisNode);
+            thisNode->next = nullptr;
             return thisNode;
         }
         ~LinkedListPool()
